@@ -1,0 +1,33 @@
+// prisma/schema.prisma
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL") // Make sure DATABASE_URL points to your MongoDB connection
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId // MongoDB ObjectId
+  email     String   @unique
+  password  String
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  parts     Part[]   @relation("UserParts")
+}
+
+model Part {
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId // MongoDB ObjectId
+  title       String
+  description String
+  price       Float
+  condition   String    // 'new' | 'used' | 'refurbished'
+  category    String
+  images      String[]  // Array of image URLs or paths
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  seller      User      @relation("UserParts", fields: [sellerId], references: [id])
+  sellerId    String    @db.ObjectId // MongoDB ObjectId
+}
