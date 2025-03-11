@@ -96,6 +96,14 @@ export default function Home() {
           Go to nextjs.org →
         </a>
       </footer>
+
+      {/* About Section */}
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-4"></h1>
+        <p className="text-lg">
+        Welcome to Auto Parts Market Place, your trusted online destination for high-quality auto parts. Whether you’re a car enthusiast, a professional mechanic, or just looking for a replacement part, we provide a seamless shopping experience with a vast selection of products. 
+        </p>
+      </div>
     </div>
   );
 }
