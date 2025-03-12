@@ -11,30 +11,32 @@ export default function RegisterPage() {
     password: "",
   });
   const [error, setError] = useState("");
-  
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.password) {
       setError("All fields are required.");
       return;
     }
-    
+
     try {
       const response = await fetch("/api/v1/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-      
+
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.message || "Failed to register. Please try again.");
       }
-      
+
+      const responseData = await response.json(); // Parse response
+      console.log("Response:", responseData);
       router.push("/auth/login");
     } catch (error) {
       if (error instanceof Error) {
@@ -44,7 +46,7 @@ export default function RegisterPage() {
       }
     }
   };
-  
+
   return (
     <div className="min-h-screen flex items-center justify-center">
       <div className="bg-white p-8 shadow-md rounded-lg max-w-sm w-full">
