@@ -1,2 +1,65 @@
 @import "tailwindcss";
 
+.content-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    margin-top: 300px;
+    margin-left: 70px;
+  }
+  
+  /* Style for the search bar */
+  .search-bar {
+    width: 80%;
+    padding: 10px;
+    margin: 20px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  /* Style for the parts list */
+  .parts-list {
+    margin-top: 20px;
+  }
+  
+  /* Style for individual part items */
+  .part-item {
+    background-color: #fafafa;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Style for the search button (icon button) */
+.search-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  .search-button svg {
+    color: #333;
+    font-size: 20px;
+  }
+  
+  .search-button:hover svg {
+    color: #007bff; /* Change color on hover */
+  }
+  
+  
+  .part-item h3 {
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .part-item p {
+    font-size: 14px;
+    color: #555;
+  }
