@@ -4,12 +4,11 @@ import { usePathname } from "next/navigation";
 
 const Navigation = () => {
   const pathname = usePathname();
-
+  
   return (
     <header className="bg-gray-800 text-white">
       <div className="container mx-auto flex justify-between items-center p-4">
         <h1 className="text-xl font-bold">AutoParts Market</h1>
-
         <nav>
           <ul className="flex space-x-6">
             <li>
@@ -20,6 +19,16 @@ const Navigation = () => {
             <li>
               <Link href="/marketplace/parts" className={pathname.includes("parts") ? "font-bold underline" : ""}>
                 Browse
+              </Link>
+            </li>
+            <li>
+              <Link href="/about" className={pathname === "/about" ? "font-bold underline" : ""}>
+                About
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className={pathname === "/contact" ? "font-bold underline" : ""}>
+                Contact
               </Link>
             </li>
             <li>
