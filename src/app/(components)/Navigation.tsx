@@ -17,7 +17,7 @@ const Navigation = () => {
               </Link>
             </li>
             <li>
-              <Link href="/marketplace/parts" className={pathname.includes("parts") ? "font-bold underline" : ""}>
+              <Link href="/browse" className={pathname.includes("parts") ? "font-bold underline" : ""}>
                 Browse
               </Link>
             </li>
