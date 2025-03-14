@@ -3,54 +3,32 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
+  // Array of products with different brands
+  const products = [
+    { id: 1, brand: "BMW", price: "M99.99", image: "/images/bmw.jpg" },
+    { id: 2, brand: "Mercedes", price: "M109.99", image: "/images/mercedes.jpg" },
+    { id: 3, brand: "Audi", price: "M95.50", image: "/images/audi.jpg" },
+    { id: 4, brand: "Toyota", price: "M89.99", image: "/images/toyota.jpg" },
+  ];
+
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Basic Header/Navigation */}
+      {/* Header Section */}
       <header className="bg-white shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-2">
-              <span className="text-2xl font-bold text-blue-600">AutoParts Market</span>
-            </div>
-            
+            <span className="text-2xl font-bold text-blue-600">AutoParts Market</span>
             <nav className="hidden md:flex space-x-6">
-              <Link href="/" className="hover:text-blue-600 transition-colors">Home</Link>
-              <Link href="/browse" className="hover:text-blue-600 transition-colors">Browse</Link>
-              <Link href="/brands" className="hover:text-blue-600 transition-colors">Brands</Link>
-              <Link href="/about" className="hover:text-blue-600 transition-colors">About</Link>
-              <Link href="/contact" className="hover:text-blue-600 transition-colors">Contact</Link>
+              <Link href="/">Home</Link>
+              <Link href="/browse">Browse</Link>
+              <Link href="/brands">Brands</Link>
+              <Link href="/about">About</Link>
+              <Link href="/contact">Contact</Link>
             </nav>
-            
-            <div className="flex items-center space-x-3">
-              <Link 
-                href="/login" 
-                className="px-4 py-2 text-blue-600 border border-blue-600 rounded hover:bg-blue-50 transition-colors"
-              >
-                Login
-              </Link>
-              <Link 
-                href="/register" 
-                className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
-              >
-                Register
-              </Link>
-              <Link href="/cart" className="relative">
-                <span className="text-xl">🛒</span>
-                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                  0
-                </span>
-              </Link>
-              <Link 
-                href="/sell" 
-                className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition-colors"
-              >
-                Sell
-              </Link>
-            </div>
           </div>
         </div>
       </header>
-      
+
       <main className="flex-grow container mx-auto px-4 py-8">
         {/* Hero Section */}
         <section className="flex flex-col md:flex-row gap-8 items-center mb-16">
@@ -127,21 +105,19 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Featured Products Placeholder */}
+        {/* Featured Products */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-8 text-center">Featured Products</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Product Cards */}
-            {[1, 2, 3, 4].map((item) => (
-              <div key={item} className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow">
+            {products.map((product) => (
+              <div key={product.id} className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow">
                 <div className="bg-gray-200 h-48 flex items-center justify-center">
-                  <span className="text-gray-500">Product Image</span>
+                  <Image src={product.image} alt={product.brand} width={200} height={150} className="object-cover" />
                 </div>
                 <div className="p-4">
-                  <h3 className="font-semibold mb-2">Product Name</h3>
-                  <p className="text-gray-600 text-sm mb-2">Brand Name</p>
+                  <h3 className="font-semibold mb-2">{product.brand}</h3>
                   <div className="flex justify-between items-center">
-                    <span className="font-bold text-lg">$99.99</span>
+                    <span className="font-bold text-lg">{product.price}</span>
                     <button className="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 transition-colors text-sm">
                       Add to Cart
                     </button>
@@ -176,17 +152,11 @@ export default function Home() {
         </section>
       </main>
 
-      {/* Simple Footer */}
+      {/* Footer Section */}
       <footer className="bg-gray-100">
         <div className="container mx-auto px-4 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="text-xl font-bold text-blue-600">AutoParts Market</div>
-            <div className="flex gap-6">
-              <Link href="/about" className="text-gray-600 hover:text-blue-600 transition-colors">About</Link>
-              <Link href="/contact" className="text-gray-600 hover:text-blue-600 transition-colors">Contact</Link>
-              <Link href="/privacy-policy" className="text-gray-600 hover:text-blue-600 transition-colors">Privacy Policy</Link>
-              <Link href="/terms" className="text-gray-600 hover:text-blue-600 transition-colors">Terms of Service</Link>
-            </div>
             <div className="text-gray-500 text-sm">© 2025 AutoParts Market. All rights reserved.</div>
           </div>
         </div>
