@@ -32,7 +32,7 @@ const Navigation = () => {
               </Link>
             </li>
             <li>
-              <Link href="/marketplace/sell" className={pathname.includes("sell") ? "font-bold underline" : ""}>
+              <Link href="/sell" className={pathname.includes("sell") ? "font-bold underline" : ""}>
                 Sell
               </Link>
             </li>
