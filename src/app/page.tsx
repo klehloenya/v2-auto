@@ -24,6 +24,7 @@ export default function Home() {
               <Link href="/brands">Brands</Link>
               <Link href="/about">About</Link>
               <Link href="/contact">Contact</Link>
+              <Link href="/auth/login">Login</Link>
             </nav>
           </div>
         </div>
