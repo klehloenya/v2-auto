@@ -1,10 +1,11 @@
 'use client';
 import React, { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
+import Link from 'next/link';
 
 export default function BrowsePage() {
   const [searchQuery, setSearchQuery] = useState('');
-  const [parts, setParts] = useState<any[]>([]); // This is where you'll store the fetched parts
+  const [parts, setParts] = useState<any[]>([]);
   const [noPartsFound, setNoPartsFound] = useState(false);
 
   // Handle search input change
@@ -12,71 +13,81 @@ export default function BrowsePage() {
     setSearchQuery(event.target.value);
   };
 
-  // Handle search submission (can be expanded with actual search functionality)
+  // Handle search submission
   const handleSearchSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-
-    // Simulating fetching parts based on search query (replace with actual API call)
     const fetchedParts = await fetchParts(searchQuery);
-    
-    // Update state based on the results
     setParts(fetchedParts);
-
-    // Check if no parts were found
     setNoPartsFound(fetchedParts.length === 0);
   };
 
-  // Simulate an API call to fetch parts based on search query (replace this with actual API logic)
+  // Simulated API call to fetch parts
   const fetchParts = (query: string) => {
-    // Simulated parts list (replace with actual API logic)
     const allParts = [
       { name: 'Brake Pad', category: 'Brakes' },
       { name: 'Air Filter', category: 'Filters' },
       { name: 'Battery', category: 'Electrical' },
     ];
-
     if (query === '') {
       return allParts;
     }
-
     return allParts.filter(part => part.name.toLowerCase().includes(query.toLowerCase()));
   };
 
   return (
-    <div className="content-container">
-      <h1>Browse Parts</h1>
-      <p>Explore a variety of auto parts available for sale.</p>
+    <div>
+      {/* Header Section */}
+      <header className="bg-white shadow-sm">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex justify-between items-center">
+            <span className="text-2xl font-bold text-blue-600">AutoParts Market</span>
+            <nav className="hidden md:flex space-x-6">
+              <Link href="/">Home</Link>
+              <Link href="/browse">Browse</Link>
+              <Link href="/brands">Brands</Link>
+              <Link href="/about">About</Link>
+              <Link href="/contact">Contact</Link>
+              <Link href="/auth/login">Login</Link>
+            </nav>
+          </div>
+        </div>
+      </header>
 
-      {/* Search form with icon */}
-      <form onSubmit={handleSearchSubmit} className="search-form">
-        <input
-          type="text"
-          className="search-bar"
-          placeholder="Search for parts"
-          value={searchQuery}
-          onChange={handleSearchChange}
-        />
-        <button type="submit" className="search-button">
-          <FaSearch /> {/* Display the search icon */}
-        </button>
-      </form>
+      {/* Main Content */}
+      <div className="content-container">
+        <h1>Browse Parts</h1>
+        <p>Explore a variety of auto parts available for sale.</p>
 
-      {/* Display the message when no parts are found */}
-      {noPartsFound && <p>No parts found. Try a different search.</p>}
+        {/* Search Form */}
+        <form onSubmit={handleSearchSubmit} className="search-form">
+          <input
+            type="text"
+            className="search-bar"
+            placeholder="Search for parts"
+            value={searchQuery}
+            onChange={handleSearchChange}
+          />
+          <button type="submit" className="search-button">
+            <FaSearch />
+          </button>
+        </form>
 
-      {/* Render the list of parts */}
-      <div className="parts-list">
-        {parts.length > 0 ? (
-          parts.map((part, index) => (
-            <div key={index} className="part-item">
-              <h3>{part.name}</h3>
-              <p>Category: {part.category}</p>
-            </div>
-          ))
-        ) : (
-          // This is a fallback in case the parts list is empty
-          <p>No parts available to display.</p>
-        )}
+        {/* Display No Parts Found Message */}
+        {noPartsFound && <p>No parts found. Try a different search.</p>}
+
+        {/* Render Parts List */}
+        <div className="parts-list">
+          {parts.length > 0 ? (
+            parts.map((part, index) => (
+              <div key={index} className="part-item">
+                <h3>{part.name}</h3>
+                <p>Category: {part.category}</p>
+              </div>
+            ))
+          ) : (
+            <p>No parts available to display.</p>
+          )}
+        </div>
       </div>
     </div>
   );

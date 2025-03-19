@@ -3,6 +3,25 @@ import Link from "next/link";
 
 export default function About() {
   return (
+    <div>
+      {/* Header Section */}
+      <header className="bg-white shadow-sm">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex justify-between items-center">
+            <span className="text-2xl font-bold text-blue-600">AutoParts Market</span>
+            <nav className="hidden md:flex space-x-6">
+              <Link href="/">Home</Link>
+              <Link href="/browse">Browse</Link>
+              <Link href="/brands">Brands</Link>
+              <Link href="/about">About</Link>
+              <Link href="/contact">Contact</Link>
+              <Link href="/auth/login">Login</Link>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      {/* Main Content */}
     <div className="container mx-auto px-4 py-8">
       <div className="flex flex-col items-center space-y-6 mb-12">
         <h1 className="text-3xl font-bold text-center">About Our Company</h1>
@@ -84,6 +103,7 @@ export default function About() {
           Browse Our Catalog
         </Link>
       </div>
+    </div>
     </div>
   );
 }
