@@ -5,6 +5,7 @@ import BM_engine from "../images/BM_engine.jpg"
 import Mercedes_Benz from "../images/Mercedes_Benz.jpg"
 import Audi_suspension from "../images/Audi_suspension.jpg"
 import Toyota_lights from "../images/Toyota_lights.jpg"
+import Building from "../images/Building.jpg"
 
 export default function Home() {
   // Array of products with different brands
@@ -59,8 +60,15 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="flex-1 bg-gray-200 rounded-lg h-80 w-full flex items-center justify-center">
-            <span className="text-gray-500">Hero Image Placeholder</span>
+          <div className="flex-1 rounded-lg h-80 w-full relative overflow-hidden">
+            <Image 
+              src="/images/Building.jpg" 
+              alt="Auto Parts MArketplace Location" 
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover" 
+            />
           </div>
         </section>
 
