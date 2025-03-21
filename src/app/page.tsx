@@ -1,14 +1,18 @@
 // app/page.tsx
 import Image from "next/image";
 import Link from "next/link";
+import BM_engine from "../images/BM_engine.jpg"
+import Mercedes_Benz from "../images/Mercedes_Benz.jpg"
+import Audi_suspension from "../images/Audi_suspension.jpg"
+import Toyota_lights from "../images/Toyota_lights.jpg"
 
 export default function Home() {
   // Array of products with different brands
   const products = [
-    { id: 1, brand: "BMW", price: "M99.99", image: "/images/bmw.jpg" },
-    { id: 2, brand: "Mercedes", price: "M109.99", image: "/images/mercedes.jpg" },
-    { id: 3, brand: "Audi", price: "M95.50", image: "/images/audi.jpg" },
-    { id: 4, brand: "Toyota", price: "M89.99", image: "/images/toyota.jpg" },
+    { id: 1, brand: "BMW", price: "M15,000", image: "/images/BM_engine.jpg", alt: "BMW Engine Part" },
+    { id: 2, brand: "Mercedes", price: "M4000", image: "/images/Mercedes_Benz.jpg", alt: "Mercedes Part" },
+    { id: 3, brand: "Audi", price: "M2,500", image: "/images/Audi_suspension.jpg", alt: "Audi Suspension" },
+    { id: 4, brand: "Toyota", price: "M2,000", image: "/images/Toyota_lights.jpg", alt: "Toyota Lights" },
   ];
 
   return (
@@ -111,9 +115,18 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-8 text-center">Featured Products</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {products.map((product) => (
-              <div key={product.id} className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow">
-                <div className="bg-gray-200 h-48 flex items-center justify-center">
-                  <Image src={product.image} alt={product.brand} width={200} height={150} className="object-cover" />
+              <div 
+              key={product.id} 
+              className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow">
+                
+                <div className="bg-gray-200 h-48 relative">
+                  <Image 
+                    src={product.image} 
+                    alt={product.alt || product.brand} 
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    className="object-cover" 
+                  />
                 </div>
                 <div className="p-4">
                   <h3 className="font-semibold mb-2">{product.brand}</h3>
