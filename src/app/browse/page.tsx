@@ -3,9 +3,16 @@ import React, { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import Link from 'next/link';
 
+// Define the Part type
+type Part = {
+  title: string;
+  category: string;
+  description: string
+};
+
 export default function BrowsePage() {
   const [searchQuery, setSearchQuery] = useState('');
-  const [parts, setParts] = useState<any[]>([]);
+  const [parts, setParts] = useState<Part[]>([]); // Type the state to an array of Part objects
   const [noPartsFound, setNoPartsFound] = useState(false);
 
   // Handle search input change
@@ -21,17 +28,25 @@ export default function BrowsePage() {
     setNoPartsFound(fetchedParts.length === 0);
   };
 
-  // Simulated API call to fetch parts
-  const fetchParts = (query: string) => {
-    const allParts = [
-      { name: 'Brake Pad', category: 'Brakes' },
-      { name: 'Air Filter', category: 'Filters' },
-      { name: 'Battery', category: 'Electrical' },
-    ];
-    if (query === '') {
-      return allParts;
+  // Define the fetchParts function with the Part type
+  const fetchParts = async (query: string): Promise<Part[]> => {
+    try {
+      const response = await fetch(`/api/v1/parts`);
+      if (!response.ok) throw new Error('Failed to fetch parts');
+      const resonseObject = await response.json()
+      const allParts: Part[] = resonseObject.data;
+      console.log("All Parts:", allParts)
+      return query
+      ? allParts.filter(part => 
+          part.title.toLowerCase().includes(query.toLowerCase()) || 
+          part.category.toLowerCase().includes(query.toLowerCase()) || 
+          part.description.toLowerCase().includes(query.toLowerCase())
+        )
+      : allParts;
+    } catch (error) {
+      console.error('Error fetching parts:', error);
+      return [];
     }
-    return allParts.filter(part => part.name.toLowerCase().includes(query.toLowerCase()));
   };
 
   return (
@@ -80,7 +95,7 @@ export default function BrowsePage() {
           {parts.length > 0 ? (
             parts.map((part, index) => (
               <div key={index} className="part-item">
-                <h3>{part.name}</h3>
+                <h3>{part.title}</h3>
                 <p>Category: {part.category}</p>
               </div>
             ))

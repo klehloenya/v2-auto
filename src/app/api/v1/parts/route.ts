@@ -8,11 +8,11 @@ export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
     const category = searchParams.get('category');
-    const condition = searchParams.get('condition');
+    const condition = searchParams.get('condition') as 'NEW' | 'USED' | 'REFURBISHED' | null;
     const minPrice = searchParams.get('minPrice');
     const maxPrice = searchParams.get('maxPrice');
 
-    const where = {
+    const where: any = {
       ...(category && { category }),
       ...(condition && { condition }),
       ...(minPrice || maxPrice) && {
@@ -37,6 +37,7 @@ export async function GET(request: Request) {
 
     return NextResponse.json({ success: true, data: parts });
   } catch (error) {
+    console.error("Prisma Error:", error);
     return NextResponse.json(
       { success: false, error: 'Failed to fetch parts' },
       { status: 500 }

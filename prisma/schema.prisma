@@ -23,11 +23,18 @@ model Part {
   title       String
   description String
   price       Float
-  condition   String    // 'new' | 'used' | 'refurbished'
+  condition   Condition // Use the Enum type for condition
   category    String
   images      String[]  // Array of image URLs or paths
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
   seller      User      @relation("UserParts", fields: [sellerId], references: [id])
   sellerId    String    @db.ObjectId // MongoDB ObjectId
+}
+
+// Enum for condition field
+enum Condition {
+  new
+  used
+  refurbished
 }
