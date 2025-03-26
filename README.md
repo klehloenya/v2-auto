@@ -135,7 +135,7 @@ Objectives:
     • Final integration and testing 
 Tasks:
     • [ ] Create order history page 
-    • [ ] Implement order details view 
+    • [ ] Implement order details view .
     • [ ] Develop review submission component 
     • [ ] Create review display functionality 
     • [ ] Conduct comprehensive testing 
