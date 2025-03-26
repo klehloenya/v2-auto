@@ -30,6 +30,7 @@ export default function Home() {
               <Link href="/about">About</Link>
               <Link href="/contact">Contact</Link>
               <Link href="/auth/login">Login</Link>
+              <Link href="/cart"> Cart</Link>
             </nav>
           </div>
         </div>
