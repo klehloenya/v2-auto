@@ -1,0 +1,149 @@
+Auto Parts Marketplace
+
+Stage 1 Report: Team Formation and Idea Development
+Team Formation Overview
+Team Members:
+    • Member 1: Role (e.g., Project Manager, Technical Lead)
+        ◦ Strengths: [e.g., leadership, backend development]
+        ◦ Interests: [e.g., AI applications, sustainable tech]
+    • Member 2: Role (e.g., Frontend Developer, Researcher)
+        ◦ Strengths: [e.g., design, user experience]
+        ◦ Interests: [e.g., accessibility, modern frameworks]
+    • Member 3: Role (e.g., Data Specialist, QA Lead)
+        ◦ Strengths: [e.g., data analysis, testing]
+        ◦ Interests: [e.g., big data, machine learning]
+    • Member 4: Role (e.g., Documentation Specialist, Generalist)
+        ◦ Strengths: [e.g., communication, adaptability]
+        ◦ Interests: [e.g., education technology, IoT]
+Collaboration Strategies:
+    • Communication Tools: [Slack, Discord, Microsoft Teams, etc.]
+    • Meeting Schedule: Weekly meetings every [day/time].
+    • Decision-Making Norms: Use consensus and voting for critical decisions.
+    • Document Sharing: Centralized repository on [Google Drive/Notion/Confluence].
+
+Ideas Explored
+Brainstormed Ideas:
+    1. Idea 1:
+        ◦ Description: Executive Summary
+          In today’s modern times, most households have both parents working which allows
+          them very little time to closely monitor their children’s school progress. This
+          situation further deteriorates with single-parent households. The eLearner
+          application seeks to bridge this gap but offering a platform that will offer better
+          communication channels between teachers and parents. The
+          eLearner application seeks to change the current landscape of Lesotho’s primary
+          education by offering tools that will enable parents and teachers to focus on key
+          areas concerning their children’s educational needs.
+          Our commitment to innovation is evident in the use of advanced analytics to
+          pinpoint key focus areas regarding early childhood learning. The seamless
+          integration of our platform with various software tools simplifies the process of
+          obtaining meaningful information to enable schools, parents, and teachers to make
+          sound decision regarding the academic trajectory of learners.
+          The Product
+          The eLearner application comes in the form of a web portal. This cloud-based
+          solution will offer opportunities for parents to engage teachers on issues pertaining
+          to learner academic progress, attendance, class participation and behavior,
+          assignments to name but a few.
+          Unlike other competitor products already in the market, the eLearner application
+          focuses mainly on providing a tool or platform to improve school-to-home
+          communication. Parents will gain access to meaningful insights that will aid them in
+          tracking their children’s academic progress. Waiting for end of term reports has
+          proved to be rather an inefficient way of tracking learner academic progress.
+          Furthermore, the eLearner application will closely be aligned with the national
+          school curriculum to ensure that learners focus on key modules. Practise quizzes
+          and tests will be adapted to reflect normal day to day school learnings and
+          academic growth. This adaptive approach will encourage a more outcome-based
+          approach to learning.
+          With full customization capabilities, participating schools will be able to submit
+          tailor-made practice tests for their respective learners. eLearner will provide a full
+          customizable platform to enable teachers to conduct practise tests and exercises.
+          Our comprehensive test analysis reports will focus on two key aspects namely
+          speed and accuracy. This will enable teachers and parents identify key areas of
+          improvement. Learner test results will be analysed through machine learning i
+          order to determine common cognitive patterns.
+          With the increased rates of child kidnappings and abductions across the world,
+          instant communication has become a necessity. Parents will receive notifications generated through the eLearner application. Furthermore, phase 2 of the pilot
+          project will involve integration with tools like Whatsapp. This safety mechanism will
+          ensure that parents are always up to date with regards to their children’s school
+          affairs.
+        ◦ In summary, the eLearner application will have the following features:
+
+        ◦ Setup of school timetables and other school activities or events.
+        ◦ Instant messaging and notifications.
+        ◦ Setup of reminders/delayed messages.
+        ◦ Setup of learner practice tests, quizzes, and homework exercises.
+        ◦ Comprehensive assessment reports using artificial intelligence (AI).
+        ◦ Time-bound learner speed tests
+        ◦ Auto-assessment of learner progress using machine learning.
+        ◦ Teacher-parent communication chats.
+        ◦ Class attendance tracking.
+        ◦ Translation abilities to Sesotho language.
+        ◦ Strengths: [E.g., innovative, easy to implement.]
+        ◦ Weaknesses: [E.g., limited scalability.]
+        ◦ Reason for Rejection: [E.g., too niche, insufficient resources.]
+Strengths:  > Bridges communication gaps between parents and teachers
+	       >  Improved student outcomes, better communication, and enhanced parental involvement
+	       >  Potential for mobile app development
+
+Weakness:   
+
+
+		
+    2. Idea 2:
+        ◦ Description: [Brief summary of the idea.]
+        ◦ Strengths: [E.g., aligns with team expertise.]
+        ◦ Weaknesses: [E.g., high complex.]
+        ◦ Reason for Rejection: [E.g., high risk, lack of feasibility.]
+    3. Idea 3:
+        ◦ Description: [Brief summary of the idea.]
+        ◦ Strengths: [E.g., high potential impact.]
+        ◦ Weaknesses: [E.g., resource-intensive.]
+        ◦ Reason for Rejection: [E.g., budget constraints, time limitations.]
+Selected MVP Concept
+MVP Summary:
+    • Project Name: eLearner
+    • Description: A cloud-based web portal connecting parents and teachers for improved student progress monitoring
+    • Problem Solved: Bridges communication gaps between parents and teachers
+    • Target Audience: Parents, teachers, and school administrators
+    • Key Features:
+        ◦ Instant messaging and notifications
+        ◦ Student progress reports with AI analytics
+        ◦ Customizable quizzes and assessments
+        ◦ Attendance tracking
+        ◦ Curriculum-aligned practice tools
+    • Expected Outcomes: Improved student outcomes, better communication, and enhanced parental involvement
+Reasons for Selection:
+    1. Feasibility: Builds on existing web technologies
+    2. Innovation: Integrates AI for tailored insights
+    3. Alignment: Directly addresses stakeholder needs
+Challenges and Opportunities:
+    • Challenges:
+        ◦ Implementing machine learning for cognitive analysis
+        ◦ Ensuring data security and privacy
+        ◦ Adoption of new tools by teachers and parents
+    • Opportunities:
+        ◦ Scalability to other regions
+        ◦ Potential for integration with additional educational tools
+        ◦ Enhancement of national education standards
+
+Decision-Making Process
+Evaluation Criteria:
+    • Feasibility
+    • Scalability
+    • Impact
+    • Technical Alignment
+Documentation
+Process Overview:
+    • Team Formation:
+        ◦ Roles were assigned based on individual strengths and interests.
+        ◦ Collaboration norms were established to ensure smooth communication.
+    • Ideas Considered:
+        ◦ Explored three key ideas with detailed evaluation of pros and cons.
+        ◦ Selected eLearner for its high potential impact and feasibility.
+    • MVP Summary:
+        ◦ Detailed concept description, rationale, and identified challenges.
+        ◦ Outlined key features and benefits for stakeholders.
+Challenges Identified:
+    1. Technical Implementation: Complexity of machine learning integration and real-time data processing.
+    2. Adoption Barriers: Resistance to change among users unfamiliar with digital tools.
+    3. Budget Constraints: Costs associated with advanced analytics and cloud infrastructure.
+    4. Data Privacy: Ensuring compliance with data protection regulations.
